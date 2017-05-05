@@ -32,6 +32,7 @@ public class MainActivity
     private WebSettings mWebSettings;
     private String[]    mPerms;
     private String      url;
+    private ImageView   mIvOther;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,8 @@ public class MainActivity
                               Manifest.permission.WRITE_EXTERNAL_STORAGE};
         initEvent();
         initData();
+        mIvOther = (ImageView) findViewById(R.id.iv_other);
+        mIvOther.setOnClickListener(this);
     }
 
     private void initEvent() {
@@ -80,7 +83,11 @@ public class MainActivity
                 break;
             case R.id.iv_setting:
                 boolean js = SpUtils.getInfo(this, "js", true);
-                SpUtils.save(this,"js",!js);
+                SpUtils.save(this, "js", !js);
+                //支持js
+                mWebSettings.setJavaScriptEnabled(!js);
+                //支持通过JS打开新窗口
+                mWebSettings.setJavaScriptCanOpenWindowsAutomatically(!js);
                 break;
         }
     }

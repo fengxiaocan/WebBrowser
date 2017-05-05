@@ -51,13 +51,19 @@
             android:layout_weight="1"
             android:padding="21px"
             android:src="@mipmap/homepage"/>
-
+        <ImageView
+            android:id="@+id/iv_other"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="15px"
+            android:src="@mipmap/other"/>
         <ImageView
             android:id="@+id/iv_flush"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="15px"
+            android:padding="20px"
             android:src="@mipmap/flush"/>
 
         <ImageView
